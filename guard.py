@@ -3,6 +3,7 @@ import time
 import subprocess
 from openai import OpenAI
 from collections import defaultdict, deque
+from dotenv import load_dotenv
 
 from config import (
     LOG_FILE,
@@ -20,6 +21,7 @@ blocked_ips = {}
 ai_cache = {}
 AI_CACHE_TTL = 600  # 10 minutes
 
+load_dotenv()
 client = OpenAI()
 
 
